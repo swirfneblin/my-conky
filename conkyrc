@@ -137,7 +137,7 @@ ${offset 20}${color2}Storage :${color} ${alignr}${offset -10}${fs_used /} / ${fs
 ${offset 20}${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda5}${alignr}${color7}${diskiograph_read sda5 8,100}
 ${offset 20}${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda5}${alignr}${color8}${diskiograph_write sda5 8,100}
 
-${offset 20}${color2}Root  -  SATA:${color} ${alignr}${offset -10}${fs_used /media/swirf/ec1a2fc5-fc7b-4ca6-9fea-32d8d2e56f8a} / ${fs_size /media/swirf/ec1a2fc5-fc7b-4ca6-9fea-32d8d2e56f8a}${alignr}${fs_bar /media/swirf/ec1a2fc5-fc7b-4ca6-9fea-32d8d2e56f8a}
+${offset 20}${color2}Root  -  SATA:${color} ${alignr}${offset -10}${fs_used /media/swirf} / ${fs_size /media/swirf}${alignr}${fs_bar /media/swirf}
 ${offset 20}${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sdb6}${alignr}${color7}${diskiograph_read sdb6 8,100}
 ${offset 20}${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sdb6}${alignr}${color8}${diskiograph_write sdb6 8,100}
 ${color5}${color5}${font Roboto:size=10}N E T W O R K   ${hr 2}${font}${color}
