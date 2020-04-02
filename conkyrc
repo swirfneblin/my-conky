@@ -12,8 +12,7 @@ conky.config = {
 	temperature_unit = 'celsius',				-- fahrenheit or celsius
 	text_buffer_size = 2048,					-- size of buffer for display of content of large variables - default 256
 	update_interval = 1,						-- update interval
-	imlib_cache_size = 0,                       -- disable image cache to get a new spotify cover per song
-
+	imlib_cache_size = 0,                       -- disable image cache to get a new spotify cover per 
 
 	--Placement
 
@@ -64,15 +63,14 @@ conky.config = {
 
 	--Windows
 
-	own_window = true,							-- create your own window to draw
-	own_window_argb_value = 150,			    -- real transparency - composite manager required 0-255
-	own_window_argb_visual = true,				-- use ARGB - composite manager required
-	own_window_colour = '#000000',				-- set colour if own_window_transparent no
-	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
-	own_window_transparent = false,				-- if own_window_argb_visual is true sets background opacity 0%
-	own_window_title = 'system_conky',			-- set the name manually  - default conky "hostname"
-	own_window_type = 'normal',				-- if own_window true options are: normal/override/dock/desktop/panel
-
+	own_window = true,
+	own_window_argb_value = 150,
+	own_window_argb_visual = true,
+	own_window_colour = '#000000',	
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager', 
+	own_window_transparent = false,	
+	own_window_title = 'system_conky',	
+	own_window_type = 'normal',	
 
 	--Colours
 
@@ -137,11 +135,11 @@ ${offset 20}${color2}Storage :${color} ${alignr}${offset -10}${fs_used /} / ${fs
 ${offset 20}${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sda5}${alignr}${color7}${diskiograph_read sda5 8,100}
 ${offset 20}${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sda5}${alignr}${color8}${diskiograph_write sda5 8,100}
 
-${offset 20}${color2}Root  -  SATA:${color} ${alignr}${offset -10}${fs_used /media/swirf} / ${fs_size /media/swirf}${alignr}${fs_bar /media/swirf}
+${offset 20}${color2}Root  -  SATA:${color} ${alignr}${offset -10}${execp df -h | grep /dev/sdb6 | awk '{print $3}'} / ${execp df -h | grep /dev/sdb6 | awk '{print $2}'}${alignr}${fs_bar /mnt/hd-sata}
 ${offset 20}${color2}I/O Read:${color} ${alignr}${offset -10}${diskio_read /dev/sdb6}${alignr}${color7}${diskiograph_read sdb6 8,100}
 ${offset 20}${color2}I/O Write:${color} ${alignr}${offset -10}${diskio_write /dev/sdb6}${alignr}${color8}${diskiograph_write sdb6 8,100}
 ${color5}${color5}${font Roboto:size=10}N E T W O R K   ${hr 2}${font}${color}
-${color2}${offset 20}IP Address: ${color} ${alignr}${offset -10$}${execp hostname -I | awk '{print $1}'} / ${curl api.ipify.org}
+${color2}${offset 20}IP Address: ${color} ${alignr}${offset -10$}${execp hostname -I | awk '{print $1}'} / ${curl api.ipify.org 2}
 ${color2}${offset 20}Eth Up:${color} ${alignr}${offset -10$}${upspeed wlp3s0}${alignr}${color7}${upspeedgraph wlp3s0 8,100}
 ${color2}${offset 20}Eth Down:${color} ${alignr}${offset -10$}${downspeed wlp3s0}${alignr}${color8}${downspeedgraph wlp3s0 8,100}
 ${color5}${color5}${font Roboto:size=10}N V I D I A   ${hr 2}${font}${color}
